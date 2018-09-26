@@ -2,7 +2,7 @@ FlappyBirdAI
 =============
 Trains a flappy Bird agent to play flappy bird. 
 
-Modified original game found from here [https://github.com/sourabhv/FlapPyBird]
+Modified original game found from [here](https://github.com/sourabhv/FlapPyBird)
 
 
 How-to
@@ -18,7 +18,7 @@ How-to
 
 ScreenShot
 ----------
-
+[200flappy.png]
 
 
 [1]: http://www.pygame.org
