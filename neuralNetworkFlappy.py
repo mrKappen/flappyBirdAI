@@ -56,6 +56,7 @@ class neuralNetwork:
                 newGen[i] = neuralNetwork.crossOver(mother,father)
                 if i%2 == 0:
                     newGen[i] = neuralNetwork.mutate(newGen[i])
+                pass
             pass
             newGen[0] = mother # preserve the best bird as is
         pass
@@ -64,16 +65,36 @@ class neuralNetwork:
         return self
         pass
     def mutate(network):
-        mask = numpy.random.randint(0,2,size=network.wih.shape).astype(numpy.bool)
-        # random matrix the same shape of your data
-        r = numpy.random.rand(*network.wih.shape)*numpy.max(network.wih)
-        # use your mask to replace values in your input array
-        network.wih[mask] = r[mask]
-        mask2 = numpy.random.randint(0,2,size=network.who.shape).astype(numpy.bool)
-        # random matrix the same shape of your data
-        r2 = numpy.random.rand(*network.who.shape)*numpy.max(network.who)
-        # use your mask to replace values in your input array
-        network.who[mask2] = r2[mask2]
+        # mask = numpy.random.randint(0,2,size=network.wih.shape).astype(numpy.bool)
+        # # random matrix the same shape of your data
+        # r = numpy.random.rand(*network.wih.shape)*numpy.max(network.wih)
+        # # use your mask to replace values in your input array
+        # network.wih[mask] = r[mask]
+        # mask2 = numpy.random.randint(0,2,size=network.who.shape).astype(numpy.bool)
+        # # random matrix the same shape of your data
+        # r2 = numpy.random.rand(*network.who.shape)*numpy.max(network.who)
+        # # use your mask to replace values in your input array
+        # network.who[mask2] = r2[mask2]
+        shape_wih = network.wih.shape
+        shape_who = network.who.shape
+        network_wih = network.wih.flatten()
+        network_who = network.who.flatten()
+        for i in network_wih:
+            if random.random()<0.5:
+                i = i + 0.05
+            else:
+                i = i - 0.05
+            pass
+        pass
+        for g in network_who:
+            if random.random()<0.5:
+                g = g + 0.05
+            else:
+                g = g - 0.05
+            pass
+        pass
+        network.wih = network_wih.reshape(shape_wih)
+        network.who = network_who.reshape(shape_who)
         return network
         pass
     def crossOver(mother, father):
