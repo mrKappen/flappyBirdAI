@@ -18,7 +18,7 @@ How-to
 
 ScreenShot
 ----------
-![alt text](flappyBirdAI/200flappy.png)
+![Screenshot](200flappy.png)
 
 
 [1]: http://www.pygame.org
